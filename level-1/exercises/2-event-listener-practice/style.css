@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  margin: 50px;
+  cursor: pointer;
+  background-color: purple;
+}
+
+.scrollability {
+  margin-top: 1000px;
+}
