@@ -15,3 +15,6 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - DOM Debug
   - Assignments
     - Mom's Grocery List
+  - Assesments
+    - Mid Level Assesment
+      - Challenge 1
