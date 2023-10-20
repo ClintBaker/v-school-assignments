@@ -5,11 +5,11 @@ This is where Clint's V-School Assignments are stored.
 ## Index
 
 - Level 0
-  -- Pre Course Project
+  - Pre Course Project
 - Level 1
-  -- Exercises
-  --- Terminal Practice
-  --- Daily Planet Editor
-  --- Event Listener Practice
-  --- DOM Olympics
-  --- DOM Debug
+  - Exercises
+  - Terminal Practice
+  - Daily Planet Editor
+  - Event Listener Practice
+  - DOM Olympics
+  - DOM Debug
