@@ -1,6 +1,6 @@
 # Clint Baker V-School Assignments
 
-This is where Clint's V-School Assignments are stored.
+This is where Clint's V-School Exercises & Assignments are stored.
 
 ## Index
 
@@ -13,3 +13,5 @@ This is where Clint's V-School Assignments are stored.
     - Event Listener Practice
     - DOM Olympics
     - DOM Debug
+  - Assignments
+    - Mom's Grocery List
