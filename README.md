@@ -8,8 +8,8 @@ This is where Clint's V-School Assignments are stored.
   - Pre Course Project
 - Level 1
   - Exercises
-  - Terminal Practice
-  - Daily Planet Editor
-  - Event Listener Practice
-  - DOM Olympics
-  - DOM Debug
+    - Terminal Practice
+    - Daily Planet Editor
+    - Event Listener Practice
+    - DOM Olympics
+    - DOM Debug
