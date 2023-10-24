@@ -14,6 +14,7 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - DOM Olympics
     - DOM Debug
     - Node Calculator
+    - Loops & Arrays Practice
   - Assignments
     - Mom's Grocery List
   - Assesments
