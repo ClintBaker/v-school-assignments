@@ -18,6 +18,7 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Loop Olympics
     - Array Methods Exercise
     - Forception
+    - String Methods Exercise
   - Assignments
     - Mom's Grocery List
   - Assesments
