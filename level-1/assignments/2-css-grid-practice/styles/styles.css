@@ -1,0 +1,33 @@
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.box {
+  background: blue;
+  height: 100px;
+  margin: 10px;
+}
+
+#box1 {
+  grid-column: 1 / 7;
+}
+
+#box2 {
+  grid-column: 7/13;
+  background: purple;
+}
+
+#box3 {
+  background-color: yellow;
+  grid-column: 1 /4;
+}
+#box4 {
+  background-color: aquamarine;
+  grid-column: 4 / 13;
+}
+
+#box5 {
+  background-color: blanchedalmond;
+  grid-column: 1 / -1;
+}

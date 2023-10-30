@@ -1,0 +1,38 @@
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.box {
+  background: blue;
+  height: 100px;
+  margin: 10px;
+}
+
+#box1 {
+  grid-column: 1 / -1;
+}
+
+#box2 {
+  grid-column: 1 / 3;
+  background: purple;
+  height: auto;
+  grid-row: 2/4;
+}
+
+#box3 {
+  background-color: yellow;
+  grid-column: 3 /5;
+  grid-row: 2/3;
+}
+#box4 {
+  background-color: aquamarine;
+  grid-column: 3 / 4;
+  grid-row: 3/4;
+}
+
+#box5 {
+  background-color: blanchedalmond;
+  grid-column: 4 / 5;
+  grid-row: 3/4;
+}
