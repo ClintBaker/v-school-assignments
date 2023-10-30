@@ -24,6 +24,7 @@ This is where Clint's V-School Exercises & Assignments are stored.
   - Assignments
     - Mom's Grocery List
     - Responsive Color Grid From Scratch
+    - CSS Grid Practice
   - Assesments
     - Mid Level Assesment
       - Challenge 1
