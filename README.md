@@ -19,8 +19,11 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Array Methods Exercise
     - Forception
     - String Methods Exercise
+    - Employee Records
+    - Escape Room
   - Assignments
     - Mom's Grocery List
+    - Responsive Color Grid From Scratch
   - Assesments
     - Mid Level Assesment
       - Challenge 1
