@@ -28,3 +28,5 @@ This is where Clint's V-School Exercises & Assignments are stored.
   - Assesments
     - Mid Level Assesment
       - Challenge 1
+  - Projects
+    - Business Time Project
