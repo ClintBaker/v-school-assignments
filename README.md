@@ -26,6 +26,7 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Responsive Color Grid From Scratch
     - CSS Grid Practice
     - Code Art School (screenshot)
+    - Bugs on a Plane
   - Assesments
     - Mid Level Assesment
       - Challenge 1
