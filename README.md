@@ -21,6 +21,7 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - String Methods Exercise
     - Employee Records
     - Escape Room
+    - FizzBuzz
   - Assignments
     - Mom's Grocery List
     - Responsive Color Grid From Scratch
