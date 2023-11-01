@@ -67,9 +67,9 @@ const items = [
 ];
 
 // 1. Greet player with a fun message
-console.log(
-  chalk.blue(
-    "Welcome to basic 80s RPG!  Your quest is to beat the demons.  Good luck!"
+readline.keyIn(
+  chalk.blue.bgCyan(
+    "Welcome to basic 80s RPG!  Your quest is to beat the demons.  Hit any key to move on to the next line.  Good luck!"
   )
 );
 
@@ -106,20 +106,22 @@ while (isActive) {
   if (walking === "w") {
     // Increment step counter
     steps++;
-    console.log(
+    readline.keyIn(
       chalk.yellow(
         `You've walked ${chalk.magentaBright(
           steps
         )} steps.  You've defeated ${chalk.magentaBright(
           enemiesDefeated
-        )} enemies.  Keep going to reach a new high score.`
+        )} enemies.  Keep going to reach a new high score. (space ->)`
       )
     );
     // 33% chance of encounter
     let encounter = encounterChance();
     // If there's an encounter handle that
     if (encounter) {
-      console.log(chalk.blue("You've been attacked by a wild enemy!"));
+      readline.keyIn(
+        chalk.blue("You've been attacked by a wild enemy! (space ->)")
+      );
       // Determine which enemy
       let enemyNum = wildEnemy();
       //   Define the enemy
@@ -134,22 +136,22 @@ while (isActive) {
           console.log(
             chalk.yellow(`You have ${chalk.magentaBright(player.hp)} HP!`)
           );
-          console.log(
+          readline.keyIn(
             chalk.yellow(
               `${chalk.magentaBright(enemy.name)} has ${chalk.magentaBright(
                 enemy.hp
-              )} HP`
+              )} HP. (space ->)`
             )
           );
           // Set first to false so this doesn't repeat.
         } else {
-          console.log(
+          readline.keyIn(
             chalk.blue(
               `${chalk.magentaBright(
                 enemy.name
               )} is rapidly approaching!  You have ${chalk.magentaBright(
                 player.hp
-              )} HP.`
+              )} HP. (space ->)`
             )
           );
         }
@@ -163,12 +165,16 @@ while (isActive) {
         if (prompt === 0) {
           // Set run to true
           run = true;
-          console.log(chalk.blue("You chose to run!  Best of luck!"));
+          readline.keyIn(
+            chalk.blue("You chose to run!  Best of luck! (space ->) ")
+          );
           // Chance of success
           const success = runSuccess();
           // Handle run chances
           if (success) {
-            console.log(chalk.blue("You made it out!  Congrats!"));
+            readline.keyIn(
+              chalk.blue("You made it out!  Congrats! (space ->)")
+            );
           } else {
             // Game over message
             console.log(
@@ -191,14 +197,16 @@ while (isActive) {
           }
           //   Fight choice:
         } else if (prompt === 1) {
-          console.log(chalk.blue("You chose to fight!"));
+          readline.keyIn(chalk.blue("You chose to fight! (space ->)"));
           //   Function for player giving damage
           let damageReturn = dealDamage(player, enemy);
           // Update enemy object from the damage received
           enemy = damageReturn.receiver;
-          console.log(
+          readline.keyIn(
             chalk.green(
-              `You dealt ${chalk.magentaBright(damageReturn.damage)} damage!`
+              `You dealt ${chalk.magentaBright(
+                damageReturn.damage
+              )} damage! (space ->)`
             )
           );
           // If the enemy is still alive they hit back
@@ -207,11 +215,11 @@ while (isActive) {
             let damageReturn2 = dealDamage(enemy, player);
             // update player from the damage received
             player = damageReturn2.receiver;
-            console.log(
+            readline.keyIn(
               chalk.red(
                 `${chalk.magentaBright(enemy.name)} dealt ${chalk.magentaBright(
                   damageReturn2.damage
-                )} damage!`
+                )} damage! (space ->)`
               )
             );
             if (player.hp < 1) {
@@ -233,11 +241,11 @@ while (isActive) {
             }
           } else {
             // DEFEAT ENEMY
-            console.log(
+            readline.keyIn(
               chalk.green(
                 `You've defeated enemy: ${chalk.magentaBright(
                   enemy.name
-                )}.  Great job!`
+                )}.  Great job! (space ->)`
               )
             );
             // increment your enemies defeated stat
@@ -245,11 +253,11 @@ while (isActive) {
             // Give random item
             let itemNum = wildEnemy();
             player.items.push(items[itemNum]);
-            console.log(
+            readline.keyIn(
               chalk.yellowBright(
                 `You were given the item ${chalk.magenta(
                   items[itemNum].name
-                )}!!  Wow!`
+                )}!!  Wow! (space ->)`
               )
             );
           }
@@ -261,7 +269,9 @@ while (isActive) {
           const success = runSuccess();
           // Handle run chances
           if (success) {
-            console.log(chalk.blue("You made it out!  Congrats!"));
+            readline.keyIn(
+              chalk.blue("You made it out!  Congrats! (space ->)")
+            );
           } else {
             console.log(
               chalk.redBright.bgBlack(
@@ -307,6 +317,7 @@ while (isActive) {
       for (let i = 0; i < player.items.length; i++) {
         itemsNames.push(player.items[i].name);
       }
+      console.log(itemsNames);
       // Prompt for an item out of the names
       const inventoryPrompt = readline.keyInSelect(
         itemsNames,
@@ -336,9 +347,7 @@ while (isActive) {
         // Remove the item
         player.items.splice(inventoryPrompt, 1);
       } else {
-        console.log(
-          chalk.yellow("No problem, you can always use items later!")
-        );
+        console.log(chalk.blue("No problem, you can always use items later!"));
       }
     } else {
       console.log(chalk.green(`You don't have any items...`));
