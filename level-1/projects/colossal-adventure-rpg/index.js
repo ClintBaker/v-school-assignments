@@ -69,7 +69,7 @@ const items = [
 // 1. Greet player with a fun message
 readline.keyIn(
   chalk.blue.bgCyan(
-    "Welcome to basic 80s RPG!  Your quest is to beat the demons.  Hit any key to move on to the next line.  Good luck!"
+    "Welcome to basic 80's RPG!  Your quest is to beat the zombies.  Hit any key to move on to the next line.  Good luck!"
   )
 );
 
@@ -93,15 +93,17 @@ let isActive = true;
 // While loop to keep the game going
 while (isActive) {
   // Walking prompt
-  let walking = readline.keyIn(
-    chalk.cyan(
-      `Press ${chalk.magenta(
-        "w"
-      )} to walk and continue your journey. Press ${chalk.magenta(
-        "p"
-      )} to view player details. Press ${chalk.magenta("i")} to use items.`
+  let walking = readline
+    .keyIn(
+      chalk.cyan(
+        `Press ${chalk.magenta(
+          "w"
+        )} to walk and continue your journey. Press ${chalk.magenta(
+          "p"
+        )} to view player details. Press ${chalk.magenta("i")} to use items.`
+      )
     )
-  );
+    .toLowerCase();
   //   If the user selected W
   if (walking === "w") {
     // Increment step counter
@@ -112,16 +114,14 @@ while (isActive) {
           steps
         )} steps.  You've defeated ${chalk.magentaBright(
           enemiesDefeated
-        )} enemies.  Keep going to reach a new high score. (space ->)`
+        )} enemies.  Keep going to reach a new high score. ->`
       )
     );
     // 33% chance of encounter
     let encounter = encounterChance();
     // If there's an encounter handle that
     if (encounter) {
-      readline.keyIn(
-        chalk.blue("You've been attacked by a wild enemy! (space ->)")
-      );
+      readline.keyIn(chalk.blue("You've been attacked by a wild enemy! ->"));
       // Determine which enemy
       let enemyNum = wildEnemy();
       //   Define the enemy
@@ -140,7 +140,7 @@ while (isActive) {
             chalk.yellow(
               `${chalk.magentaBright(enemy.name)} has ${chalk.magentaBright(
                 enemy.hp
-              )} HP. (space ->)`
+              )} HP. ->`
             )
           );
           // Set first to false so this doesn't repeat.
@@ -151,7 +151,7 @@ while (isActive) {
                 enemy.name
               )} is rapidly approaching!  You have ${chalk.magentaBright(
                 player.hp
-              )} HP. (space ->)`
+              )} HP. ->`
             )
           );
         }
@@ -165,21 +165,17 @@ while (isActive) {
         if (prompt === 0) {
           // Set run to true
           run = true;
-          readline.keyIn(
-            chalk.blue("You chose to run!  Best of luck! (space ->) ")
-          );
+          readline.keyIn(chalk.blue("You chose to run!  Best of luck! -> "));
           // Chance of success
           const success = runSuccess();
           // Handle run chances
           if (success) {
-            readline.keyIn(
-              chalk.blue("You made it out!  Congrats! (space ->)")
-            );
+            readline.keyIn(chalk.blue("You made it out!  Congrats! ->"));
           } else {
             // Game over message
             console.log(
               chalk.redBright.bgBlack(
-                "You were devoured by the demons!  GAME OVER you coward!"
+                "You were devoured by the zombies!  GAME OVER, you coward!"
               )
             );
             // Post game stats
@@ -197,16 +193,14 @@ while (isActive) {
           }
           //   Fight choice:
         } else if (prompt === 1) {
-          readline.keyIn(chalk.blue("You chose to fight! (space ->)"));
+          readline.keyIn(chalk.blue("You chose to fight! ->"));
           //   Function for player giving damage
           let damageReturn = dealDamage(player, enemy);
           // Update enemy object from the damage received
           enemy = damageReturn.receiver;
           readline.keyIn(
             chalk.green(
-              `You dealt ${chalk.magentaBright(
-                damageReturn.damage
-              )} damage! (space ->)`
+              `You dealt ${chalk.magentaBright(damageReturn.damage)} damage! ->`
             )
           );
           // If the enemy is still alive they hit back
@@ -219,7 +213,7 @@ while (isActive) {
               chalk.red(
                 `${chalk.magentaBright(enemy.name)} dealt ${chalk.magentaBright(
                   damageReturn2.damage
-                )} damage! (space ->)`
+                )} damage! ->`
               )
             );
             if (player.hp < 1) {
@@ -245,7 +239,7 @@ while (isActive) {
               chalk.green(
                 `You've defeated enemy: ${chalk.magentaBright(
                   enemy.name
-                )}.  Great job! (space ->)`
+                )}.  Great job! ->`
               )
             );
             // increment your enemies defeated stat
@@ -257,7 +251,7 @@ while (isActive) {
               chalk.yellowBright(
                 `You were given the item ${chalk.magenta(
                   items[itemNum].name
-                )}!!  Wow! (space ->)`
+                )}!!  Wow! ->`
               )
             );
           }
