@@ -7,9 +7,9 @@ import chalk from "chalk";
 function encounterChance() {
   // 33% chance
   if (Math.random() > 0.33) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -41,7 +41,7 @@ function dealDamage(dealer, receiver) {
   let min = 1;
   let max = dealer.power;
 
-  let damage = Math.floor(Math.random() * (max - min + 1)) + min;
+  let damage = Math.floor(Math.random() * max) + min;
   receiver = {
     ...receiver,
     hp: receiver.hp - damage,
@@ -75,7 +75,7 @@ readline.keyIn(
 
 // 2. Ask player's name and store it + build character model
 const name = readline.question(chalk.cyan("Please enter your name: "));
-// Build character model with default attributes and no items
+// Build character model with default attributes and starter item (HP Boost)
 let player = {
   name,
   hp: 8,
@@ -88,7 +88,7 @@ console.log(chalk.blue(`Welcome to the adventure, ${name}`));
 let enemiesDefeated = 0;
 // Steps counter
 let steps = 0;
-// Game is active
+// Condition for game to continue
 let isActive = true;
 // While loop to keep the game going
 while (isActive) {

@@ -49,7 +49,7 @@ if (operators[operator]) {
 }
 
 function add(num1, num2) {
-  return num1 + num2;
+  return Number(num1) + Number(num2);
 }
 
 function subtract(num1, num2) {
