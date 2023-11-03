@@ -22,6 +22,7 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Employee Records
     - Escape Room
     - FizzBuzz
+    - Problem Solving Practice
   - Assignments
     - Mom's Grocery List
     - Responsive Color Grid From Scratch
@@ -33,3 +34,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
       - Challenge 1
   - Projects
     - Business Time Project
+    - Colossal Adventure RPG
