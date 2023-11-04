@@ -35,3 +35,6 @@ This is where Clint's V-School Exercises & Assignments are stored.
   - Projects
     - Business Time Project
     - Colossal Adventure RPG
+- Level 2
+  - Assignments
+    - HTML Calculator

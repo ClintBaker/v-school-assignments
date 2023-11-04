@@ -1,0 +1,59 @@
+/* Default reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eaeaea;
+}
+
+.nav {
+  background-color: navy;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.container {
+  margin-top: 40px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h3 {
+  align-self: center;
+}
+
+.form {
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+#add {
+  background-color: burlywood;
+}
+
+#subtract {
+  background-color: blueviolet;
+}
+
+#divide {
+  background-color: aqua;
+}

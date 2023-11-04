@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML Calculator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.png" />
+  </head>
+  <body>
+    <nav class="nav"><h1>HTML Calculator</h1></nav>
+    <main class="main">
+      <section id="add" class="container">
+        <h3>Add</h3>
+        <form class="form" name="add">
+          <input placeholder="Number 1" name="num1" type="number" />
+          <span>+</span>
+          <input placeholder="Number 2" name="num2" type="number" />
+          <button>Submit</button>
+        </form>
+        <div id="add-result">Result:</div>
+      </section>
+      <section id="subtract" class="container">
+        <h3>Subtract</h3>
+        <form class="form" name="subtract">
+          <input placeholder="Number 1" name="num1" type="number" />
+          <span>-</span>
+          <input placeholder="Number 2" name="num2" type="number" />
+          <button>Submit</button>
+        </form>
+        <div id="subtract-result">Result:</div>
+      </section>
+      <section id="divide" class="container">
+        <h3>Divide</h3>
+        <form class="form" name="multiply">
+          <input placeholder="Number 1" name="num1" type="number" />
+          <span>*</span>
+          <input placeholder="Number 2" name="num2" type="number" />
+          <button>Submit</button>
+        </form>
+        <div id="multiply-result">Result:</div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
