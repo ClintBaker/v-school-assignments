@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Travel Form</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.png" />
+  </head>
+  <body>
+    <nav class="nav">
+      <h1>Bargain Travel Company 🚀</h1>
+      <h3>Our prices are low cause we get our jetts from the dump!</h3>
+    </nav>
+    <main class="main">
+      <section id="fly-with-us" class="container">
+        <h2>Fly with us!</h2>
+        <p>Fill out this form to get started:</p>
+        <form name="travel-form">
+          <div class="form-section">
+            <h4>General info:</h4>
+            <input name="first-name" placeholder="First Name" />
+            <input name="last-name" placeholder="Last Name" />
+            <input id="age" type="number" name="age" placeholder="age" />
+          </div>
+          <div class="form-section">
+            <h4>Gender:</h4>
+            <input type="radio" name="gender" value="male" />
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="female" />
+            <label for="female">Female</label>
+            <input type="radio" name="gender" value="other" />
+            <label for="other">Other</label>
+          </div>
+          <div class="form-section">
+            <h4>Where are you travelling?</h4>
+            <select name="destination">
+              <option value="tahiti">Tahiti</option>
+              <option value="bora-bora">Bora Bora</option>
+              <option value="bahamas">Bahamas</option>
+            </select>
+          </div>
+          <div class="form-section">
+            <h4>Please list any dietary restrictions:</h4>
+            <input
+              name="dietary-restrictions"
+              type="checkbox"
+              value="gluten-free"
+            />
+            <label for="gluten-free">Gluten Free</label>
+            <input name="dietary-restrictions" type="checkbox" value="paleo" />
+            <label for="gluten-free">Paleo</label>
+            <input name="dietary-restrictions" type="checkbox" value="keto" />
+            <label for="keto">Keto</label>
+          </div>
+          <div id="submit-container" class="form-section">
+            <button id="submit">Submit</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
