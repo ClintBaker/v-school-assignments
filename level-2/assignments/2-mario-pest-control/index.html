@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mario Pest Control</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.png" />
+  </head>
+  <body>
+    <nav class="nav">
+      <h1>⚡️ Mario Pest Control</h1>
+    </nav>
+    <main class="main">
+      <h2>Let's calculate the cost of removing baddies!</h2>
+      <div class="baddies">
+        <div id="goomba" class="baddie">
+          <h3>Goomba</h3>
+          <div class="baddie-img">
+            <img src="/assets/goomba.jpg" />
+          </div>
+          <span>Price: 5 coins</span>
+          <div class="input">
+            <label for="qty-goomba">Quantity:</label>
+            <input name="qty-goomba" id="qty-goomba" type="number" />
+          </div>
+        </div>
+        <div id="bob-omb" class="baddie">
+          <h3>Bob-omb</h3>
+          <div class="baddie-img">
+            <img src="/assets/bob-omb.png" />
+          </div>
+          <span>Price: 7 coins</span>
+          <div class="input">
+            <label for="qty-bob-omb">Quantity:</label>
+            <input name="qty-bob-omb" id="qty-bob-omb" type="number" />
+          </div>
+        </div>
+        <div id="cheep-cheep" class="baddie">
+          <h3>Cheep Cheep</h3>
+          <div class="baddie-img">
+            <img src="/assets/cheep-cheep.jpg" />
+          </div>
+          <span>Price: 11 coins</span>
+          <div class="input">
+            <label for="qty-cheep-cheep">Quantity:</label>
+            <input name="qty-cheep-cheep" id="qty-cheep-cheep" type="number" />
+          </div>
+        </div>
+      </div>
+      <div class="total-price">
+        <h2>Your total cost:</h2>
+        <span id="cost">0 coins</span>
+      </div>
+    </main>
+    <footer class="footer">
+      <ul>
+        <li>mario@mariopestcontrol.net</li>
+        <li>mariopestcontrol.net</li>
+        <li>1234 Mario Pest Control Lane, Mario Town, USA</li>
+      </ul>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
