@@ -37,6 +37,8 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Colossal Adventure RPG
 - Level 2
   - Assignments
+    - Mid Level Assesment
+  - Assignments
     - HTML Calculator
     - Travel Form
     - Mario Pest Control
