@@ -44,3 +44,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Array Map Exercises
     - Array Filter Exercises
     - Array Sort Exercises
+    - Array Reduce Exercises
