@@ -42,3 +42,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Mario Pest Control
     - Go Speed Clicker!
     - Array Map Exercises
+    - Array Filter Exercises
