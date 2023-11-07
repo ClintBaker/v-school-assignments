@@ -39,3 +39,6 @@ This is where Clint's V-School Exercises & Assignments are stored.
   - Assignments
     - HTML Calculator
     - Travel Form
+    - Mario Pest Control
+    - Go Speed Clicker!
+    - Array Map Exercises
