@@ -43,3 +43,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Go Speed Clicker!
     - Array Map Exercises
     - Array Filter Exercises
+    - Array Sort Exercises
