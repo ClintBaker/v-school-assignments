@@ -27,3 +27,15 @@ const strings = ["hello", "world", "javascript"];
 const uppercaseStrings = convertToUppercase(strings);
 // Log the result
 console.log(uppercaseStrings); // Output: ['HELLO', 'WORLD', 'JAVASCRIPT']
+
+// CHALLENGE 3
+//
+// Write a function that takes an array of numbers and returns a new array containing only the even numbers.
+
+function filterEvenNumbers(numbers) {
+  return numbers.filter((number) => number % 2 === 0);
+}
+
+const numbers2 = [1, 2, 3, 4, 5, 6];
+const evenNumbers = filterEvenNumbers(numbers2);
+console.log(evenNumbers); // Output: [2, 4, 6]
