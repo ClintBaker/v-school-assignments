@@ -33,7 +33,8 @@ console.log(uppercaseStrings); // Output: ['HELLO', 'WORLD', 'JAVASCRIPT']
 // Write a function that takes an array of numbers and returns a new array containing only the even numbers.
 
 function filterEvenNumbers(numbers) {
-  return numbers.filter((number) => number % 2 === 0);
+  // prettier-ignore
+  return numbers.filter(number => number % 2 === 0);
 }
 
 const numbers2 = [1, 2, 3, 4, 5, 6];
