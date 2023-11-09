@@ -50,3 +50,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Multiple Array Methods Practice
     - Catch Me If You Can
     - DJ CSS
+    - CSS Zen Garden
