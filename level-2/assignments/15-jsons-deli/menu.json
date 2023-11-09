@@ -1,0 +1,62 @@
+{
+  "appetizers": [
+    {
+      "name": "jalapeno poppers",
+      "ingredients": ["jalapeno", "batter", "cheese"],
+      "description": "this jalapeno pops"
+    },
+    {
+      "name": "salad",
+      "ingredients": ["lettuce", "dressing", "cheese"],
+      "description": "it's a salad"
+    }
+  ],
+  "cold sandwhiches": [
+    {
+      "name": "ham and cheese",
+      "ingredients": ["ham", "cheese", "bread"],
+      "description": "basic sandwhich"
+    },
+    {
+      "name": "club",
+      "ingredients": ["ham", "turkey", "cheese", "bread"],
+      "description": "welcome to the club"
+    }
+  ],
+  "hot sandwhiches": [
+    {
+      "name": "grilled cheese",
+      "ingredients": ["bread", "butter", "cheese"],
+      "description": "classic"
+    },
+    {
+      "name": "green chile roast beef",
+      "ingredients": ["green chile", "roast beef", "bread", "cheese"],
+      "description": "this is the one"
+    }
+  ],
+  "desserts": [
+    {
+      "name": "cookie",
+      "ingredients": ["batter", "chocolate chip", "butter"],
+      "description": "it's a cookie"
+    },
+    {
+      "name": "macaron",
+      "ingredients": ["almond", "batter", "mystery baked goods"],
+      "description": "it tastes so good, you could name a Canadian prime minister after it."
+    }
+  ],
+  "drinks": [
+    {
+      "name": "soda",
+      "ingredients": ["sugar", "water", "syrup"],
+      "description": "drink up"
+    },
+    {
+      "name": "iced tea",
+      "ingredients": ["tea", "water", "lemon"],
+      "description": "it's good"
+    }
+  ]
+}
