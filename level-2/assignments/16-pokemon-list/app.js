@@ -8,13 +8,18 @@ xhr.send();
 
 // When the XHR state changes, run this function (if SUCCESS, use the data)
 xhr.onreadystatechange = function () {
+  // If state is 4 (returned from server) and status is 200:
   if (xhr.readyState === 4 && xhr.status === 200) {
+    // Grab the XHR response text and store as var
     const JSONdata = xhr.responseText;
+    // Parse the return using JSON.parse()
     const data = JSON.parse(JSONdata);
+    // call the addToDOM function with the .objects[0].pokemon property of the return data
     addToDOM(data.objects[0].pokemon);
   }
 };
 
+// Define pokemonListArea (main div)
 const pokemonListArea = document.getElementById("pokemon");
 // add Pokemon to DOM
 function addToDOM(pokemon) {
@@ -22,15 +27,15 @@ function addToDOM(pokemon) {
   pokemon.forEach((poke) => {
     // Create a new div
     const pokeDiv = document.createElement("div");
-    // Assign an ID for the pokemon div so we can add more to it later
+    // Assign an ID for the pokemon div
     pokeDiv.id = poke.name;
     // Create an h3 tag
     const pokeTitle = document.createElement("h3");
-    // Adjust the text content to match
+    // Adjust the text content to the Pokemon name
     pokeTitle.textContent = poke.name;
-    // Append title to the container div
+    // Append title H3 to the container div
     pokeDiv.append(pokeTitle);
-    // Append to DOM
+    // Append to container div to main container
     pokemonListArea.append(pokeDiv);
   });
 }
