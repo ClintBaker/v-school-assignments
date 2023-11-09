@@ -55,5 +55,6 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Slope Style
     - The Princess is in Another Castle
     - JSON's Deli
+    - Pokemon List
   - Exercises
     - ES6
