@@ -1,4 +1,5 @@
 // 1.
+// A function that takes an array of numbers and returns an array of doubled numbers
 function doubleNumbers(nums) {
   const doubled = nums.map((num) => {
     return num * 2;
@@ -10,6 +11,8 @@ function doubleNumbers(nums) {
 console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
 
 // 2.
+// A function that takes an array of numbers and
+// returns an array of strings
 function stringItUp(arr) {
   const strings = arr.map((num) => {
     return `${num}`;
@@ -20,6 +23,8 @@ function stringItUp(arr) {
 console.log(stringItUp([2, 5, 100])); // ["2", "5", "100"]
 
 // 3.
+// A function that takes in an array of strings and returns
+// them where the first letter is capitalized
 function capitalizeNames(arr) {
   const caps = arr.map((name) => {
     let str = "";
@@ -43,6 +48,8 @@ console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]));
 // ["John", "Jacob", "Jingleheimer", "Schmidt"]
 
 // 4.
+// A function that takes an array of objects, and returns an array
+// of only the name properties of the objects
 function namesOnly(arr) {
   const names = arr.map((obj) => {
     return obj.name;
@@ -78,6 +85,8 @@ console.log(
 // ["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]
 
 // 5.
+// A function that takes in an array of objects and returns an array
+// of strings that are conditional based on age.
 function makeStrings(arr) {
   const strings = arr.map((person) => {
     if (person.age >= 18) {
@@ -120,6 +129,8 @@ console.log(
 // "Bob Ziroll can go to The Matrix"]
 
 // 6.
+// A function that takes an array of objects and returns an array
+// of strings that ready for the DOM.
 function readyToPutInTheDOM(arr) {
   const domArr = arr.map((person) => {
     return `<h1>${person.name}</h1><h2>${person.age}</h2`;
