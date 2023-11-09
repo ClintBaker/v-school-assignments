@@ -52,5 +52,6 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - DJ CSS
     - CSS Zen Garden
     - ES6 Practice
+    - Slope Style
   - Exercises
     - ES6
