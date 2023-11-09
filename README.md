@@ -51,3 +51,6 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Catch Me If You Can
     - DJ CSS
     - CSS Zen Garden
+    - ES6 Practice
+  - Exercises
+    - ES6
