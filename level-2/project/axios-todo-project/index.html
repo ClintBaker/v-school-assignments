@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axios Todo Project</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.png" />
+  </head>
+  <body>
+    <nav class="nav"><h2>Axios Todo Project</h2></nav>
+    <main class="main">
+      <section class="hero"><h1>My Todos</h1></section>
+      <section class="add">
+        <h3>Add a new todo</h3>
+        <form name="add" class="add_form">
+          <input name="title" placeholder="Title" />
+          <input name="description" placeholder="Description" type="text" />
+          <input name="url" placeholder="Image URL" />
+          <button class="btn_submit">Submit</button>
+        </form>
+      </section>
+      <section id="todos" class="todos"></section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

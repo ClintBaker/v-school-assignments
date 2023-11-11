@@ -59,3 +59,5 @@ This is where Clint's V-School Exercises & Assignments are stored.
   - Exercises
     - ES6
     - Axios
+  - Projects
+    - Capstone Project Axios Todo Project
