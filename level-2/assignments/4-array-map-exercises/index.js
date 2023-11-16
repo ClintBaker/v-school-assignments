@@ -15,7 +15,7 @@ console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
 // returns an array of strings
 function stringItUp(arr) {
   const strings = arr.map((num) => {
-    return `${num}`;
+    return num.toString();
   });
   return strings;
 }
