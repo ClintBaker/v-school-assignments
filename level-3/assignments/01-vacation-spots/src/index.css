@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* START NAV */
+.nav {
+  background: slategray;
+  padding: 15px;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* END NAV */
+
+/* START MAIN */
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: 800;
+  background-color: aquamarine;
+  color: slategray;
+}
+
+.spots {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.card {
+  width: 350px;
+  background-color: #eaeaea;
+  padding: 50px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.spring {
+  background-color: greenyellow;
+}
+
+.fall {
+  background-color: orangered;
+}
+
+.summer {
+  background-color: yellow;
+}
+
+.winter {
+  background-color: cadetblue;
+}
+
+/* END MAIN */
