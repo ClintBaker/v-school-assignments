@@ -67,3 +67,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
   - Assignments
     - Blog Props
     - Vacation Spots
+    - Friends with Pets
