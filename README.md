@@ -69,3 +69,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Vacation Spots
     - Friends with Pets
     - useState Practice
+    - React Dice
