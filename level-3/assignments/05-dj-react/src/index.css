@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav {
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: white;
+  padding: 15px 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.board {
+  padding: 100px;
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.squares {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  border: 1px solid rgb(69, 69, 69);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+}
+
+.btn {
+  padding: 8px 15px;
+  margin: 5px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  border: 1px solid purple;
+  border-radius: 6px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.music {
+  margin-top: 50px;
+}

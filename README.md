@@ -70,3 +70,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Friends with Pets
     - useState Practice
     - React Dice
+    - DJ React
