@@ -72,3 +72,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - React Dice
     - DJ React
     - Name Entry
+    - Name Badge

@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form--container {
+  display: flex;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 8px;
+  min-width: 600px;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form {
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding: 7px;
+  margin: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 45%;
+}
+
+.textarea {
+  padding: 7px;
+  margin: 20px 15px;
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 660px;
+  height: 120px;
+}
+
+.button {
+  padding: 5px 30px;
+  margin: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.badges {
+  margin-bottom: 150px;
+}
+
+.badge--main--container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 800px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.badge--container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.badge--top {
+  width: 100%;
+  background-color: rgb(89, 89, 89);
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+}
+
+.badge--input {
+  padding: 7px;
+  margin: 10px 15px;
+  width: 45%;
+}
+
+.badge--textarea {
+  padding: 7px;
+  margin: 20px 15px;
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 660px;
+  height: 120px;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
