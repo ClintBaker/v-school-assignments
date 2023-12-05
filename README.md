@@ -71,3 +71,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - useState Practice
     - React Dice
     - DJ React
+    - Name Entry

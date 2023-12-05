@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.master--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  background: linear-gradient(90deg, #eaeaea 1.18%, #d1d1d1 100%);
+  width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 50px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.input--text {
+  min-height: 40px;
+  width: 400px;
+  margin-bottom: 45px;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  text-align: center;
+}
+
+.input {
+  width: 200px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 8px;
+  margin: 3px;
+}
+
+.btn {
+  min-width: 60px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 8px;
+  margin: 3px;
+  font-weight: bold;
+}
+
+.names {
+  margin-top: 80px;
+  padding: 15px;
+}
+
+.names h2 {
+  margin-bottom: 5px;
+}
+
+.names ol li {
+  padding: 3px;
+}
