@@ -73,3 +73,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - DJ React
     - Name Entry
     - Name Badge
+    - Random Color Component
