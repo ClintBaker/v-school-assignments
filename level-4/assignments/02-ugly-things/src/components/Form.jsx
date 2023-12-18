@@ -6,7 +6,7 @@ function Form() {
 
   const [formData, setFormData] = useState({
     title: "",
-    img: "https://picsum.photos/200/300",
+    img: `https://picsum.photos/seed/${Math.floor(Math.random() * 99)}/200/200`,
     description: "",
   });
 
@@ -33,7 +33,7 @@ function Form() {
   return (
     <>
       <form onSubmit={handleSubmit} className="create--ugly">
-        <p>Create an Ugly Thing!</p>
+        <h2>Create an Ugly Thing!</h2>
         <div className="inputs">
           <input
             type="text"

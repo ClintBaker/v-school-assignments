@@ -1,5 +1,10 @@
 import { useState, createContext, useEffect } from "react";
-import { getAllThings, postData } from "./handlers/handlers";
+import {
+  deleteThing,
+  editThing,
+  getAllThings,
+  postData,
+} from "./handlers/handlers";
 
 const UglyThingsContext = createContext();
 
@@ -15,12 +20,12 @@ function UglyThingsContextProvider(props) {
     postData(formData, setUglyThings);
   };
 
-  const deleteUglyThing = () => {
-    console.log("DELETING UGLY THING");
+  const deleteUglyThing = (id) => {
+    deleteThing(id, setUglyThings);
   };
 
-  const editUglyThing = () => {
-    console.log("EDITING UGLY THING");
+  const editUglyThing = (id, formData) => {
+    editThing(id, formData, setUglyThings);
   };
 
   return (
