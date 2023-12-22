@@ -11,7 +11,7 @@ function App() {
     <>
       <Router>
         <nav className="nav">
-          <h1>React Roto Router</h1>
+          <h1>🚰 React Roto Router</h1>
           <div className="links">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>

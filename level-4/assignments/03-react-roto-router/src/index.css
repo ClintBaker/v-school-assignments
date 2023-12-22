@@ -19,7 +19,7 @@ body {
 }
 
 .nav * {
-  margin: 5px;
+  margin: 5px 14px;
 }
 
 .main {
@@ -29,6 +29,22 @@ body {
   align-items: center;
   margin: 150px;
   min-height: 40vh;
+  text-align: center;
+}
+
+.main h1 {
+  margin-bottom: 15px;
+}
+
+.list--div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.list {
+  text-align: justify;
 }
 
 .footer {
