@@ -1,0 +1,18 @@
+1. Use an API
+2. 3 Views using React Router
+3. Context, hooks (useState, useEffect, useRef) where needed
+4. Responsive (mobile first)
+5. Same Origin Policy - use https://coursework.vschool.io/v-school-request-forwarding-cors-documentation/ when necessary
+6. Proposal
+    - You must submit a proposal and have it passed by an instructor.  This proposal is meant to help focus and scale your idea into a realistic MVP, or minimum viable product, within a reasonable time frame.
+    a. Paragraph describing the idea
+    b. An easily describable MPV.
+    c. User Stories (https://www.mountaingoatsoftware.com/agile/user-stories)
+    d. Wireframe (https://wireframe.cc/)
+    e. Mind Map (https://www.mindmup.com/)
+
+
+Currency api key: c3adb0ef1883607546a09d1ebaf86673
+URL: http://api.currencylayer.com/live?access_key=c3adb0ef1883607546a09d1ebaf86673
+
+Overview: https://vschooldesign.notion.site/Level-4-Capstone-React-API-Project-a27fb392a4ac48e1ad3e116ea63011df 
