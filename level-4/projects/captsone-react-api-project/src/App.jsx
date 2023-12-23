@@ -34,11 +34,12 @@ function App() {
           </div>
         </nav>
         <main className="main">
-          <p>BTC PRICE:</p>
-          <div>{conversionValues.btc.price}</div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/usd" element={<USD />} />
+            <Route
+              path="/usd"
+              element={<USD conversionValues={conversionValues} />}
+            />
             <Route path="/crypto" element={<Cryptocurrency />} />
           </Routes>
         </main>
