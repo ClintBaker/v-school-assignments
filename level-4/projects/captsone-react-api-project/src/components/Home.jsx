@@ -6,11 +6,8 @@ function Home() {
       <h2>Welcome to Cryptocurrency Converter!</h2>
       <p>Let's get started converting some crypto!</p>
       <div className="buttons">
-        <Link className="btn" to="/usd">
-          USD to Crypto
-        </Link>
-        <Link className="btn" to="/crypto">
-          Crypto to USD
+        <Link className="btn" to="/convert">
+          Convert
         </Link>
       </div>
     </div>
