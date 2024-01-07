@@ -83,6 +83,6 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - React Roto Router
 - Level 5
   - Exercises
-    - Bounty Hunger Part 1
+    - Bounty Hunter
     - Thing Finder
     - Picked Off

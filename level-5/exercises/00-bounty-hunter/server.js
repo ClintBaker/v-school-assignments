@@ -52,12 +52,14 @@ let bounties = [
 app.use(express.json());
 
 // Handle routes
+// Get bounties
 app.get("/bounty", (req, res) => {
   console.log("GET /bounty 200 SUCCESS");
 
   res.send({ data: bounties });
 });
 
+// create bounty
 app.post("/bounty", (req, res) => {
   console.log("POST /bounty 200 SUCCESS");
 
@@ -73,6 +75,40 @@ app.post("/bounty", (req, res) => {
   bounties.push(newBounty);
 
   res.send({ message: "bounty successfully created", data: newBounty });
+});
+
+// edit a bounty
+app.put("/bounty/:id", (req, res) => {
+  const bountyIndex = bounties.findIndex(
+    (bounty) => bounty._id === req.params.id
+  );
+
+  if (bountyIndex !== -1) {
+    const updatedBounty = Object.assign(bounties[bountyIndex], req.body);
+
+    res.send({ data: updatedBounty });
+  } else {
+    res.status(400).send({ message: "bad request" });
+  }
+});
+
+// delete a bounty
+app.delete("/bounty/:id", (req, res) => {
+  const bountyIndex = bounties.findIndex(
+    (bounty) => bounty._id === req.params.id
+  );
+
+  if (bountyIndex !== -1) {
+    // remove the bounty from our array
+    bounties.splice(bountyIndex, 1);
+    res.send({
+      message: "Successfully deleted bounty",
+      data: bounties[bountyIndex],
+    });
+  } else {
+    // send error
+    res.status(400).send({ message: "bad request" });
+  }
 });
 
 // Listen on port 3002
