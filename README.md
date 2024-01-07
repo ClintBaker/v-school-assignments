@@ -81,3 +81,8 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Changing Theme Using Context
     - Ugly Things
     - React Roto Router
+- Level 5
+  - Exercises
+    - Bounty Hunger Part 1
+    - Thing Finder
+    - Picked Off
