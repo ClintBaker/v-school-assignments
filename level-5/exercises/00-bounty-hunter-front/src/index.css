@@ -7,3 +7,48 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.bounties--container {
+  padding: 40px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bounties {
+  display: flex;
+  flex-direction: column;
+}
+
+.bounty {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 7px;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  width: 600px;
+}
+
+.bounty * {
+  margin: 5px;
+  padding: 5px;
+}
+
+.gray {
+  background-color: #5e5e5e;
+  color: white;
+}
