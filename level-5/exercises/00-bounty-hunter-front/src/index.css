@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   margin: 7px;
   padding: 10px;
   border: 1px solid #eaeaea;
@@ -48,36 +48,20 @@ body {
   padding: 5px;
 }
 
+.bounty--nav {
+  border: 1px solid #eaeaea;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
 .gray {
   background-color: #5e5e5e;
   color: white;
 }
 
-.bounty--form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 700px;
-  margin-bottom: 50px;
-}
-
 input {
-  padding: 5px;
-  margin: 3px;
-  border-radius: 7px;
+  width: 60px;
+  border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   border: 1px solid #eaeaea;
-}
-
-.bounty--form button {
-  width: 115px;
-  padding: 5px;
-  margin: 3px;
-  border-radius: 7px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  border: 1px solid #eaeaea;
-  background-color: black;
-  color: white;
 }

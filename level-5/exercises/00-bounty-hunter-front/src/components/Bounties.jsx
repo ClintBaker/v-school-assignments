@@ -13,11 +13,13 @@ export default function Bounties() {
 
   return (
     <div className="main">
-      <h3>Create a new bounty</h3>
-      <BountyForm setBounties={setBounties} />
       <h2>Bounties:</h2>
+      <br />
+      <h4>Create new bounty</h4>
       <div className="bounties--container">
         <div className="bounties">
+          <BountyForm type="create" setBounties={setBounties} />
+          <br />
           <div className="bounty gray">
             <h4>Name</h4>
             <h4>Status</h4>

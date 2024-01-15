@@ -6,7 +6,9 @@ function App() {
 
   return (
     <>
-      <h1>Bounty Hunter</h1>
+      <nav className="bounty--nav">
+        <h1>💰🛸 Bounty Hunter App</h1>
+      </nav>
       <Bounties />
     </>
   );

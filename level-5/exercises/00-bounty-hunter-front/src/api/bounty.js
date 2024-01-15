@@ -18,3 +18,16 @@ export const deleteBounty = async (id, setBounties) => {
     prevBounties.filter((bounty) => bounty._id !== id)
   );
 };
+
+export const editBounty = async (id, body, setBounties) => {
+  const res = await axios.put(`${url}/bounty/${id}`, body);
+  setBounties((prevBounties) =>
+    prevBounties.map((bounty) => {
+      if (bounty._id === id) {
+        return res.data.data;
+      } else {
+        return bounty;
+      }
+    })
+  );
+};
