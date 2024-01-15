@@ -21,44 +21,48 @@ export default function BountyForm({ setBounties }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     createBounty(formData, setBounties);
-
     setFormData(formDefault);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        name="firstName"
-        value={formData.firstName}
-        placeholder="First Name"
-        onChange={handleChange}
-      />
-      <input
-        name="lastName"
-        value={formData.lastName}
-        placeholder="Last Name"
-        onChange={handleChange}
-      />
-      <input
-        name="status"
-        value={formData.status}
-        placeholder="Status"
-        onChange={handleChange}
-      />
-      <input
-        name="bountyAmount"
-        value={formData.bountyAmount}
-        placeholder="Bounty Amount"
-        onChange={handleChange}
-      />
-      <input
-        name="type"
-        value={formData.type}
-        placeholder="Type"
-        onChange={handleChange}
-      />
+    <form className="bounty--form" onSubmit={handleSubmit}>
+      <div>
+        <input
+          name="firstName"
+          value={formData.firstName}
+          placeholder="First Name"
+          onChange={handleChange}
+        />
+        <input
+          name="lastName"
+          value={formData.lastName}
+          placeholder="Last Name"
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <input
+          name="status"
+          value={formData.status}
+          placeholder="Status"
+          onChange={handleChange}
+        />
+        <input
+          name="bountyAmount"
+          value={formData.bountyAmount}
+          placeholder="Bounty Amount"
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <input
+          name="type"
+          value={formData.type}
+          placeholder="Type"
+          onChange={handleChange}
+        />
+      </div>
       <button>Submit</button>
     </form>
   );

@@ -27,7 +27,7 @@ export default function Bounties() {
             <h4>Delete</h4>
           </div>
           {bounties.map((bounty) => (
-            <Bounty key={bounty._id} {...bounty} />
+            <Bounty setBounties={setBounties} key={bounty._id} {...bounty} />
           ))}
         </div>
       </div>

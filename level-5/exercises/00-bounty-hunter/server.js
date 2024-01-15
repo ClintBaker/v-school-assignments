@@ -101,11 +101,12 @@ app.delete("/bounty/:id", (req, res) => {
   );
 
   if (bountyIndex !== -1) {
+    const bountyToSend = bounties[bountyIndex];
     // remove the bounty from our array
     bounties.splice(bountyIndex, 1);
     res.send({
       message: "Successfully deleted bounty",
-      data: bounties[bountyIndex],
+      data: bountyToSend,
     });
   } else {
     // send error
