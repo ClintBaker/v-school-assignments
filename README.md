@@ -84,6 +84,7 @@ This is where Clint's V-School Exercises & Assignments are stored.
 - Level 5
   - Exercises
     - Bounty Hunter
+    - Bounty Hunter Front
     - Thing Finder
     - Picked Off
     - Todo Backend

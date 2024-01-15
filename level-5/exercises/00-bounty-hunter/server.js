@@ -24,6 +24,7 @@ PT 1:
 // import npm modules
 import { v4 as uuidv4 } from "uuid";
 import express from "express";
+import cors from "cors";
 
 // instantiate the app
 const app = express();
@@ -48,8 +49,9 @@ let bounties = [
   },
 ];
 
-// express.json middleware
+// express.json middleware & cors middleware
 app.use(express.json());
+app.use(cors());
 
 // Handle routes
 // Get bounties
