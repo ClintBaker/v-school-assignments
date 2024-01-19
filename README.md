@@ -88,3 +88,4 @@ This is where Clint's V-School Exercises & Assignments are stored.
     - Thing Finder
     - Picked Off
     - Todo Backend
+    - Crud Store
