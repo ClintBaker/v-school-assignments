@@ -11,9 +11,9 @@ export default function BountyForm({
   const formDefault = {
     firstName: "",
     lastName: "",
-    status: "",
+    living: true,
     bountyAmount: "",
-    type: "",
+    type: "jedi",
   };
 
   const startData = placeholder ? placeholder : formDefault;
@@ -54,24 +54,24 @@ export default function BountyForm({
         placeholder="last"
         onChange={handleChange}
       />
-      <input
-        name="status"
-        value={formData.status}
-        placeholder="status"
-        onChange={handleChange}
-      />
+      <select value={formData.living} name="living" onChange={handleChange}>
+        <option selected value={true}>
+          Alive
+        </option>
+        <option value={false}>Dead</option>
+      </select>
       <input
         name="bountyAmount"
         value={formData.bountyAmount}
         placeholder="amount"
         onChange={handleChange}
       />
-      <input
-        name="type"
-        value={formData.type}
-        placeholder="type"
-        onChange={handleChange}
-      />
+      <select value={formData.type} name="type" onChange={handleChange}>
+        <option selected value="jedi">
+          jedi
+        </option>
+        <option value="sith">sith</option>
+      </select>
       {type === "edit" && <button onClick={handleEdit}>Cancel</button>}
       <button>Submit</button>
     </form>
