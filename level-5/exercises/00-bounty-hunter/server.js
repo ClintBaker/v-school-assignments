@@ -1,4 +1,7 @@
+// CREATE .env FILE WITH MONGODB_CONNECTION_STRING
+
 // import npm modules
+import 'dotenv/config'
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
@@ -11,7 +14,7 @@ main().catch((err) => console.log(err));
 // Function to connect
 async function main() {
   await mongoose.connect(
-    "mongodb+srv://clintjbaker:Evqbaq3apqH28TSu@cluster0.zlp1vlv.mongodb.net/?retryWrites=true&w=majority"
+    process.env.MONGODB_CONNECTION_STRING
   );
 }
 
