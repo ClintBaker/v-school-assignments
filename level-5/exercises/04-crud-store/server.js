@@ -1,16 +1,17 @@
-import express from "express";
-import mongoose from "mongoose";
+import express from "express"
+import mongoose from "mongoose"
+import 'dotenv/config'
 
 // For inventory routes
-import inventoryRouter from "./routes/inventory.js";
+import inventoryRouter from "./routes/inventory.js"
 
 // Call function to connect to DB
-main().catch((err) => console.log(err));
+main().catch((err) => console.log(err))
 
 // Function to connect
 async function main() {
   await mongoose.connect(
-    "mongodb+srv://clintjbaker:Evqbaq3apqH28TSu@cluster0.zlp1vlv.mongodb.net/?retryWrites=true&w=majority"
+    process.env.MONGODB
   );
 }
 
