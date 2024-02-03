@@ -4,10 +4,9 @@
 
 1. Encrypt password
 
-1. User
-1. Issue
+2. Issue
    - Title, Description, Upvote, Downvote, User, Total Votes, Comments,
-1. Comment
+3. Comment
 
 ## Requirements
 
