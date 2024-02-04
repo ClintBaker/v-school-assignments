@@ -64,3 +64,21 @@ export const editIssue = async (req, res, next) => {
     return next(e)
   }
 }
+
+export const deleteIssue = async (req, res, next) => {
+  try {
+    // get the issue based on param
+    const issue = await Issue.findById(req.params.issueId)
+    // make sure the user is the owner
+    if (issue.user.toString() !== req.auth.id) {
+      res.status(401)
+      return next(new Error('Unauthorized'))
+    }
+    // delete issue
+    await issue.deleteOne()
+    // result
+    res.status(200).send({ message: 'Issue succesfully deleted' })
+  } catch (e) {
+    return next(e)
+  }
+}
