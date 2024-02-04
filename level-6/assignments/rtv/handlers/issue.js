@@ -2,10 +2,19 @@ import { Issue } from '../models/issue.js'
 
 export const getUserIssues = async (req, res, next) => {
   try {
-    // get issues with user of req.auth.id
+    // get issues with user of req.auth.id (populate comments & username of comments)
     const issues = await Issue.find({
       user: req.auth.id,
     })
+      .populate({
+        path: 'comments',
+        populate: {
+          path: 'user',
+          select: 'username',
+          model: 'User',
+        },
+      })
+      .exec()
     res.status(200).send({ issues })
   } catch (e) {
     res.status(500)
@@ -17,6 +26,15 @@ export const getIssues = async (req, res, next) => {
   try {
     // get all issues
     const issues = await Issue.find()
+      .populate({
+        path: 'comments',
+        populate: {
+          path: 'user',
+          select: 'username',
+          model: 'User',
+        },
+      })
+      .exec()
     // return issues
     res.status(200).send({ issues })
   } catch (e) {
@@ -81,4 +99,64 @@ export const deleteIssue = async (req, res, next) => {
   } catch (e) {
     return next(e)
   }
+}
+
+export const upvoteIssue = async (req, res, next) => {
+  try {
+    // get issue
+    const issue = await Issue.findById(req.params.issueId)
+    if (!issue) {
+      res.status(400)
+      return next(new Error('Issue not found'))
+    }
+    // check if user has already upvoted
+    const hasUpvoted = issue.upvotes.find((id) => id.toString() === req.auth.id)
+    // if they already have just send back an error
+    if (hasUpvoted) {
+      res.status(400)
+      return next(new Error('Issue already upvoted'))
+    }
+    // if not upvote
+    issue.upvotes.push(req.auth.id)
+    // check if user has already downvoted
+    const hasDownvoted = issue.downvotes.find(
+      (id) => id.toString() === req.auth.id
+    )
+    // if so remove from downvotes
+    if (hasDownvoted) {
+      issue.downvotes.pop(req.auth.id)
+    }
+    // save issue
+    await issue.save()
+    // response
+    res.status(200).send({ issue })
+  } catch (e) {
+    return next(e)
+  }
+}
+
+export const downvoteIssue = async (req, res, next) => {
+  // get issue
+  const issue = await Issue.findById(req.params.issueId)
+  // check if the user has already downvoted
+  const hasDownvoted = issue.downvotes.find(
+    (id) => id.toString() === req.auth.id
+  )
+  // if they have send back error
+  if (hasDownvoted) {
+    res.status(400)
+    return next(new Error('Issue already downvoted'))
+  }
+  // if not downvote
+  issue.downvotes.push(req.auth.id)
+  // check if the user has already upvoted
+  const hasUpvoted = issue.upvotes.find((id) => id.toString() === req.auth.id)
+  // if so remove from downvotes
+  if (hasUpvoted) {
+    issue.upvotes.pop(req.auth.id)
+  }
+  // save issue
+  await issue.save()
+  // response
+  res.status(200).send({ issue })
 }
