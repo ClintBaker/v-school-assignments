@@ -1,27 +1,51 @@
-import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { useEffect, useState, useContext } from 'react'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import Auth from './components/Auth'
-import axios from 'axios'
+import Profile from './components/Profile'
+import { UserContext } from './context/UserProvider'
+import './nav.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  useEffect(() => {
-    const getStuff = async () => {
-      const res = await axios.get('/api')
-      console.log(res)
-    }
-    getStuff()
-  }, [])
+  // get token from context
+  const { token, user, logout, addIssue } = useContext(UserContext)
+
+  const handleLogout = () => {
+    // logout function to clear localStorage and state
+    logout()
+  }
 
   return (
     <>
-      <nav>
-        <h1>ROCK THE VOTE</h1>
+      <nav className="nav">
+        <h1>RTV</h1>
+        {token && (
+          <a onClick={handleLogout} className="logout">
+            Logout
+          </a>
+        )}
       </nav>
-      <Routes>
-        <Route path="/" element={<Auth />} />
-      </Routes>
+      <section className="container">
+        <Routes>
+          {/* main page.  if authenticated push to profile, otherwise go to Auth */}
+          <Route
+            path="/"
+            element={token ? <Navigate to="/profile" /> : <Auth />}
+          />
+          {/* profile */}
+          <Route
+            path="/profile"
+            element={
+              token ? (
+                <Profile addIssue={addIssue} user={user} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+        </Routes>
+      </section>
     </>
   )
 }

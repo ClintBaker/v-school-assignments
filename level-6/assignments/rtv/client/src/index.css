@@ -59,6 +59,38 @@ a:hover {
   text-decoration: underline;
 }
 
+input {
+  border: 1px solid #eaeaea;
+  margin: 2px;
+  padding: 10px;
+  border-radius: 15px;
+  width: 250px;
+  font-family: monospace, Arial, Helvetica, sans-serif;
+}
+
+textarea {
+  border: 1px solid #eaeaea;
+  margin: 2px;
+  padding: 10px;
+  border-radius: 15px;
+  width: 250px;
+  height: 120px;
+  resize: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.form button {
+  border: 1px solid #eaeaea;
+  margin: 2px;
+  padding: 10px;
+  border-radius: 15px;
+  width: 250px;
+  cursor: pointer;
+}
+
 /* Utility classes for spacing */
 .mt-1 {
   margin-top: 1rem;
@@ -71,6 +103,26 @@ a:hover {
 }
 .pb-1 {
   padding-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid #eaeaea;
+  background-color: white;
+  border-radius: 15px;
+  padding: 35px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Responsive design: Adjustments for small screens */
