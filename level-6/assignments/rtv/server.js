@@ -23,6 +23,14 @@ app.use(
   expressjwt({ secret: process.env.JWT_SECRET, algorithms: ['HS256'] })
 )
 
+// welcome message
+app.get('/', (req, res, next) => {
+  res.status(200)
+  res.send({
+    message: 'Welcome to the RTV API.  Follow documentation for routes',
+  })
+})
+
 // routes
 app.use('/auth', authRouter)
 app.use('/api/issue', issueRouter)
