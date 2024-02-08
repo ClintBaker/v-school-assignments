@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   // get token from context
-  const { token, user, logout, addIssue } = useContext(UserContext)
+  const { token, user, logout, addIssue, issues } = useContext(UserContext)
 
   const handleLogout = () => {
     // logout function to clear localStorage and state
@@ -38,7 +38,7 @@ function App() {
             path="/profile"
             element={
               token ? (
-                <Profile addIssue={addIssue} user={user} />
+                <Profile issues={issues} addIssue={addIssue} user={user} />
               ) : (
                 <Navigate to="/" />
               )

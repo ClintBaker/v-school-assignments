@@ -1,0 +1,19 @@
+.issues_h3 {
+  margin-top: 35px;
+}
+
+.issues {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.issue {
+  width: 300px;
+  height: 300px;
+  overflow-y: scroll;
+  margin: 5px;
+}
