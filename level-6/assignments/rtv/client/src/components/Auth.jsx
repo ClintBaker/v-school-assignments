@@ -7,19 +7,20 @@ import { UserContext } from '../context/UserProvider'
 export default function Auth() {
   const [toggle, setToggle] = useState(false)
 
-  const { signup, signin } = useContext(UserContext)
+  const { signup, signin, err, resetAuthError } = useContext(UserContext)
 
   function handleToggle() {
     setToggle((prevToggle) => !prevToggle)
+    resetAuthError()
   }
 
   return (
     <>
       <div className="center">
         {toggle ? (
-          <Signup signup={signup} handleToggle={handleToggle} />
+          <Signup err={err} signup={signup} handleToggle={handleToggle} />
         ) : (
-          <Signin signin={signin} handleToggle={handleToggle} />
+          <Signin err={err} signin={signin} handleToggle={handleToggle} />
         )}
       </div>
     </>

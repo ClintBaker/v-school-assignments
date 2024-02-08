@@ -4,6 +4,7 @@ import Auth from './components/Auth'
 import Profile from './components/Profile'
 import { UserContext } from './context/UserProvider'
 import './nav.css'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,11 +38,9 @@ function App() {
           <Route
             path="/profile"
             element={
-              token ? (
+              <ProtectedRoute token={token} redirect="/">
                 <Profile issues={issues} addIssue={addIssue} user={user} />
-              ) : (
-                <Navigate to="/" />
-              )
+              </ProtectedRoute>
             }
           />
         </Routes>

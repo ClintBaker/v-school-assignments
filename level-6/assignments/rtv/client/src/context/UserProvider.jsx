@@ -16,6 +16,7 @@ export default function UserProvider(props) {
     user: JSON.parse(localStorage.getItem('user')) || {},
     token: localStorage.getItem('token') || '',
     issues: [],
+    err: '',
   }
 
   const [userState, setUserState] = useState(initState)
@@ -35,8 +36,8 @@ export default function UserProvider(props) {
       localStorage.setItem('token', token)
       localStorage.setItem('user', JSON.stringify(user))
     } catch (e) {
-      // if issue log error
-      console.log(e)
+      // if issue handle error
+      handleAuthError(e.response.data.error)
     }
   }
 
@@ -55,7 +56,8 @@ export default function UserProvider(props) {
       localStorage.setItem('token', token)
       localStorage.setItem('user', JSON.stringify(user))
     } catch (e) {
-      console.log(e)
+      // if issue handle error
+      handleAuthError(e.response.data.error)
     }
   }
 
@@ -69,6 +71,20 @@ export default function UserProvider(props) {
     // reset localStorage
     localStorage.removeItem('token')
     localStorage.removeItem('user')
+  }
+
+  function handleAuthError(err) {
+    setUserState((prevState) => ({
+      ...prevState,
+      err,
+    }))
+  }
+
+  function resetAuthError() {
+    setUserState((prevUserState) => ({
+      ...prevUserState,
+      err: '',
+    }))
   }
 
   async function addIssue(newIssue) {
@@ -98,7 +114,15 @@ export default function UserProvider(props) {
   }
   return (
     <UserContext.Provider
-      value={{ ...userState, setUserState, signup, signin, logout, addIssue }}
+      value={{
+        ...userState,
+        setUserState,
+        signup,
+        signin,
+        logout,
+        addIssue,
+        resetAuthError,
+      }}
     >
       {props.children}
     </UserContext.Provider>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 const initFormData = { username: '', password: '' }
 
-export default function Signup({ handleToggle, signup }) {
+export default function Signup({ handleToggle, signup, err }) {
   const [formData, setFormData] = useState(initFormData)
 
   const handleChange = (e) => {
@@ -32,6 +32,7 @@ export default function Signup({ handleToggle, signup }) {
             type="password"
           />
           <button>Submit</button>
+          <p style={{ color: 'red' }}>{err}</p>
         </form>
         <a className="cursor" onClick={handleToggle}>
           Already have an account?

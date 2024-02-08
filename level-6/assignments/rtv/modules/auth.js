@@ -2,7 +2,7 @@ import { User } from '../models/user.js'
 import jwt from 'jsonwebtoken'
 
 export const createJWT = (user) => {
-  const token = jwt.sign(user.withoutPassword(), process.env.JWT_SECRET)
+  const token = jwt.sign(user, process.env.JWT_SECRET)
   return token
 }
 
@@ -22,7 +22,7 @@ export const signUp = async (req, res, next) => {
     const newUser = new User(req.body)
     const savedUser = await newUser.save()
     //   once user is created create a token for the user
-    const token = createJWT(savedUser)
+    const token = createJWT(savedUser.withoutPassword())
     //   send back user and token
     res.status(201).send({ user: savedUser.withoutPassword(), token })
   } catch (e) {
@@ -46,14 +46,14 @@ export const signIn = async (req, res, next) => {
     user.checkPassword(req.body.password, (err, isMatch) => {
       if (err) {
         res.status(403)
-        return next(new Error('ERROR'))
+        return next(new Error('Username or password is incorrect'))
       }
       if (!isMatch) {
         res.status(403)
         return next(new Error('Username or password is incorrect'))
       }
       // get a token
-      const token = createJWT(user)
+      const token = createJWT(user.withoutPassword())
       // return user and a token
       res.status(200).send({ user: user.withoutPassword(), token })
     })
