@@ -10,7 +10,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   // get token from context
-  const { token, user, logout, addIssue, issues } = useContext(UserContext)
+  const { token, user, logout, addIssue, issues, getUserIssues } =
+    useContext(UserContext)
 
   const handleLogout = () => {
     // logout function to clear localStorage and state
@@ -20,12 +21,17 @@ function App() {
   return (
     <>
       <nav className="nav">
-        <h1>RTV</h1>
-        {token && (
-          <a onClick={handleLogout} className="logout">
-            Logout
-          </a>
-        )}
+        <div className="nav_secondary">
+          <h1>RTV</h1>
+          {token && <a>All Issues</a>}
+        </div>
+        <div>
+          {token && (
+            <a onClick={handleLogout} className="logout">
+              Logout
+            </a>
+          )}
+        </div>
       </nav>
       <section className="container">
         <Routes>
@@ -39,7 +45,12 @@ function App() {
             path="/profile"
             element={
               <ProtectedRoute token={token} redirect="/">
-                <Profile issues={issues} addIssue={addIssue} user={user} />
+                <Profile
+                  getUserIssues={getUserIssues}
+                  issues={issues}
+                  addIssue={addIssue}
+                  user={user}
+                />
               </ProtectedRoute>
             }
           />

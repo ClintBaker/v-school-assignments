@@ -125,6 +125,16 @@ textarea {
   align-items: center;
 }
 
+.nav_secondary {
+  display: flex;
+  align-items: center;
+}
+
+.nav_secondary a {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
 /* Responsive design: Adjustments for small screens */
 @media (max-width: 768px) {
   .container {

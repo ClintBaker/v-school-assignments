@@ -1,0 +1,26 @@
+INCOMPLETE
+2. Issue List
+    - List of issues
+        - Each has a title & description
+        - Upvote or downvote each
+            - One per User
+    - Sort based on number of upvotes, with the most upvoted issues at the top
+    - Display total number of votes per issues
+3. User Interaction
+    - //DONE Include a page for logged-in users to add new posts
+    - //DONE Implement a page where logged-in users can view all the posts theyve created
+    - Allow users to comment on posts with an unlimited number of comments per posts
+5. API Operations
+    - GET, POST, PUT, DELETE for issues and comments
+
+
+
+COMPLETE
+1. //DONE User Authentication
+    - //DONE Login & signup page.  Authentication must occur to access any part of app.
+4. //DONE Backend Config
+    - //DONE Create backend models & routes for persisting topics, comments, votes
+    - //DONE React front end
+    - //DONE Node & Express backend
+    - //DONE MongoDB & Mongoose Data models
+    - //DONE User auth with dotenv, jwt, expressjwt

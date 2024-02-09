@@ -46,7 +46,8 @@ export default function UserProvider(props) {
       const res = await axios.post('/api/auth/signin', credentials)
       // store user data and token in context
       const { user, token } = res.data
-      getUserIssues()
+      // get user issues and store in state
+      // getUserIssues()
       setUserState((prevUserState) => ({
         ...prevUserState,
         token,
@@ -103,7 +104,6 @@ export default function UserProvider(props) {
   async function getUserIssues() {
     try {
       const res = await userAxios.get('/api/api/issue/user')
-      console.log(res.data.issues)
       setUserState((prevUserState) => ({
         ...prevUserState,
         issues: res.data.issues,
@@ -122,6 +122,7 @@ export default function UserProvider(props) {
         logout,
         addIssue,
         resetAuthError,
+        getUserIssues,
       }}
     >
       {props.children}

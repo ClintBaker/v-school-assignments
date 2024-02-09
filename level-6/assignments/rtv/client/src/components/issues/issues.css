@@ -13,7 +13,50 @@
 
 .issue {
   width: 300px;
-  height: 300px;
+  height: auto;
   overflow-y: scroll;
   margin: 5px;
+}
+
+.issue_description {
+  height: 120px;
+  overflow: scroll;
+}
+
+.issue_buttons {
+  display: flex;
+  overflow: wrap;
+  justify-content: space-between;
+}
+
+.issue_btn {
+  border: 1px solid #eaeaea;
+  margin: 1px;
+  padding: 10px 13px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.issue_arrows {
+  display: flex;
+  align-items: center;
+}
+
+.issue_arrows span {
+  margin-right: 7px;
+}
+
+.comment_form p {
+  margin-top: 10px;
+}
+.comment_form textarea {
+  width: 100%;
+}
+.comment_form button {
+  border: 1px solid #eaeaea;
+  margin: 2px;
+  padding: 10px;
+  border-radius: 15px;
+  width: 100%;
+  cursor: pointer;
 }
