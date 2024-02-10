@@ -14,18 +14,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  issues: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Issue',
-    },
-  ],
-  comments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Comment',
-    },
-  ],
 })
 
 // pre-save hook to encrypt user passwords on signup

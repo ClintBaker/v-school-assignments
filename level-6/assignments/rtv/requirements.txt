@@ -1,3 +1,6 @@
+NOTES
+- Make sure you use userAxios in order to create new comment (gotta associate it)
+
 INCOMPLETE
 2. Issue List
     - List of issues

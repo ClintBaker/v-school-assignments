@@ -1,0 +1,11 @@
+// big o notation
+// o n times
+// data structures
+
+/* 
+different types of data structures
+    - STACK
+    - differences between stack & que
+    - wink list
+    - graph basic understanding
+*/ 

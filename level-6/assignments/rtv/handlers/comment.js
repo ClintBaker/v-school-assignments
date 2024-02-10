@@ -17,10 +17,6 @@ export const createComment = async (req, res, next) => {
       user: req.auth.id,
       issue: req.params.issueId,
     })
-    // associate comment with issue
-    const user = await User.findById(req.auth.id)
-    user.comments.push(comment._id)
-    await user.save()
     // associate comment with user
     issue.comments.push(comment._id)
     await issue.save()

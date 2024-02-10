@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import CommentForm from './CommentForm'
 import axios from 'axios'
+import { UserContext } from '../../context/UserProvider'
 
 export default function Issue({
   issue,
@@ -15,6 +16,8 @@ export default function Issue({
   const [commentToggle, setCommentToggle] = useState(false)
   const [commentFormData, setCommentFormData] = useState({ comment: '' })
 
+  const { addComment } = useContext(UserContext)
+
   useEffect(() => {
     // const hasUpvoted = upvotes.find(id => )
     // hasDownvoted
@@ -24,14 +27,7 @@ export default function Issue({
   function handleSubmitComment() {
     const comment = commentFormData.comment
     // async call to axios to post comment
-    async function submitComment(comment) {
-      const newComment = axios.post(`/api/api/issue/${_id}/comment`, {
-        text: comment,
-      })
-
-      // if success we need to reload the page
-    }
-    submitComment()
+    addComment(_id, comment)
   }
 
   function handleCommentFormChange(e) {
@@ -41,10 +37,6 @@ export default function Issue({
       ...prevCommentFormData,
       [name]: value,
     }))
-  }
-
-  function submitCommentForm() {
-    // beam up the comment
   }
 
   function toggleComment() {

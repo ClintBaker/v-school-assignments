@@ -101,6 +101,23 @@ export default function UserProvider(props) {
     }
   }
 
+  async function addComment(issueId, comment) {
+    try {
+      const newComment = await userAxios.post(
+        `/api/api/issue/${issueId}/comment`,
+        {
+          text: comment,
+        }
+      )
+
+      console.log(newComment)
+
+      // if success we need to reload the page
+    } catch (e) {
+      console.log(e.response.data.error)
+    }
+  }
+
   async function getUserIssues() {
     try {
       const res = await userAxios.get('/api/api/issue/user')
@@ -121,6 +138,7 @@ export default function UserProvider(props) {
         signin,
         logout,
         addIssue,
+        addComment,
         resetAuthError,
         getUserIssues,
       }}
