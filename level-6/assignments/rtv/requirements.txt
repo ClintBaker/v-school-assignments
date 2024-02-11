@@ -2,17 +2,14 @@ NOTES
 - Make sure you use userAxios in order to create new comment (gotta associate it)
 
 TODO
-1. Add a comment
-2. Render comments
-    - Comment username not pulling from API
 3. All issues
-4. Likes functionality
+4. Upvote / downvote functionality
 5. Sort
 
 INCOMPLETE
 2. Issue List
     - List of issues
-        - Each has a title & description
+        - //DONE Each has a title & description
         - Upvote or downvote each
             - One per User
     - Sort based on number of upvotes, with the most upvoted issues at the top
@@ -35,3 +32,5 @@ COMPLETE
     - //DONE User auth with dotenv, jwt, expressjwt
 5. //DONE API Operations
     - //DONE GET, POST, PUT, DELETE for issues and comments
+1. //DONE Add a comment
+2. //DONE Render comments
