@@ -22,6 +22,7 @@ export default function Issue({
   function handleSubmitComment() {
     const comment = commentFormData.comment
     // async call to axios to post comment
+    setCommentFormData({ comment: '' })
     addComment(_id, comment)
   }
 

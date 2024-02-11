@@ -14,7 +14,7 @@ export const createComment = async (req, res, next) => {
     // otherwise create comment
     const comment = await Comment.create({
       text: req.body.text,
-      user: req.auth.id,
+      user: req.auth._id,
       issue: req.params.issueId,
     })
     // associate comment with user
@@ -56,14 +56,14 @@ export const deleteComment = async (req, res, next) => {
       return next(new Error('Comment not found'))
     }
     // validate user owns comment
-    const isOwner = comment.user._id.toString() === req.auth.id
+    const isOwner = comment.user._id.toString() === req.auth._id
     if (!isOwner) {
       res.status(401)
       return next(new Error('Unauthorized'))
     }
     // -- DELETE COMMENT
     // get user
-    const user = await User.findById(req.auth.id)
+    const user = await User.findById(req.auth._id)
     // remove from user's comments
     user.comments.pop(comment._id)
     // remove from issue's comments

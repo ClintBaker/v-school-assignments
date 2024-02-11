@@ -6,8 +6,8 @@ export default function Comment({ comment }) {
   }, [])
   return (
     <div className="comment">
-      <h4>Jim:</h4>
-      <p>This sucks!</p>
+      <h4>{comment.user.username}:</h4>
+      <p>{comment.text}</p>
     </div>
   )
 }
