@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
-import CommentForm from './CommentForm'
+import CommentForm from './comments/CommentForm'
 import axios from 'axios'
 import { UserContext } from '../../context/UserProvider'
+import Comments from './comments/Comments'
 
 export default function Issue({
   issue,
@@ -61,7 +62,7 @@ export default function Issue({
         </button>
       </div>
       {commentToggle && (
-        <CommentForm
+        <Comments
           handleCommentFormChange={handleCommentFormChange}
           commentFormData={commentFormData}
           handleSubmitComment={handleSubmitComment}

@@ -5,7 +5,6 @@ export default function CommentForm({
 }) {
   return (
     <div className="comment_form">
-      <h4>Comments ⬇️</h4>
       <p>Add a comment:</p>
       <textarea
         placeholder="comment"
