@@ -13,8 +13,8 @@
 
 .issue {
   width: 300px;
-  height: auto;
-  overflow-y: scroll;
+  height: 300px;
+  overflow: scroll;
   margin: 5px;
 }
 
@@ -47,6 +47,10 @@
 }
 
 .comment_form p {
+  margin-top: 10px;
+}
+
+.comment_form h4 {
   margin-top: 10px;
 }
 .comment_form textarea {

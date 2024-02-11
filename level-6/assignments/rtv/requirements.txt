@@ -1,6 +1,13 @@
 NOTES
 - Make sure you use userAxios in order to create new comment (gotta associate it)
 
+TODO
+1. Add a comment
+2. Render comments
+3. All issues
+4. Likes functionality
+5. Sort
+
 INCOMPLETE
 2. Issue List
     - List of issues
@@ -13,8 +20,6 @@ INCOMPLETE
     - //DONE Include a page for logged-in users to add new posts
     - //DONE Implement a page where logged-in users can view all the posts theyve created
     - Allow users to comment on posts with an unlimited number of comments per posts
-5. API Operations
-    - GET, POST, PUT, DELETE for issues and comments
 
 
 
@@ -27,3 +32,5 @@ COMPLETE
     - //DONE Node & Express backend
     - //DONE MongoDB & Mongoose Data models
     - //DONE User auth with dotenv, jwt, expressjwt
+5. //DONE API Operations
+    - //DONE GET, POST, PUT, DELETE for issues and comments

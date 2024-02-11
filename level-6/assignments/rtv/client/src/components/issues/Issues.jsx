@@ -11,9 +11,10 @@ export default function Issues({ issues, getUserIssues }) {
     <>
       <h3 className="issues_h3">My Issues:</h3>
       <div className="issues">
-        {issues.map((issue) => (
-          <Issue issue={issue} {...issue} key={issue._id} />
-        ))}
+        {issues &&
+          issues.map((issue) => (
+            <Issue issue={issue} {...issue} key={issue._id} />
+          ))}
       </div>
     </>
   )
