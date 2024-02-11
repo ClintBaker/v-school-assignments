@@ -19,12 +19,6 @@ export default function Issue({
 
   const { addComment } = useContext(UserContext)
 
-  useEffect(() => {
-    // const hasUpvoted = upvotes.find(id => )
-    // hasDownvoted
-    console.log(issue)
-  }, [])
-
   function handleSubmitComment() {
     const comment = commentFormData.comment
     // async call to axios to post comment
@@ -63,6 +57,7 @@ export default function Issue({
       </div>
       {commentToggle && (
         <Comments
+          comments={comments}
           handleCommentFormChange={handleCommentFormChange}
           commentFormData={commentFormData}
           handleSubmitComment={handleSubmitComment}

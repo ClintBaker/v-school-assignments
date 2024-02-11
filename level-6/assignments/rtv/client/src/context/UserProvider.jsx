@@ -111,8 +111,7 @@ export default function UserProvider(props) {
       )
 
       console.log(newComment)
-
-      // if success we need to reload the page
+      getUserIssues()
     } catch (e) {
       console.log(e.response.data.error)
     }
