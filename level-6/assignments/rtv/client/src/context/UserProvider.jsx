@@ -151,10 +151,18 @@ export default function UserProvider(props) {
 
   async function getUserIssues() {
     try {
+      // get user issues
       const res = await userAxios.get('/api/api/issue/user')
+      // sort issues based on upvotes
+      const sortedIssues = res.data.issues.sort(
+        (a, b) => b.totalVotes - a.totalVotes
+      )
+
+      console.log(sortedIssues)
+      // update state
       setUserState((prevUserState) => ({
         ...prevUserState,
-        issues: res.data.issues,
+        issues: sortedIssues,
       }))
     } catch (e) {
       console.log(e.response.data.error)
