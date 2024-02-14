@@ -117,6 +117,29 @@ export default function UserProvider(props) {
     }
   }
 
+  async function upvote(issueId) {
+    // hit API with upvote for issueId
+    const res = await userAxios.put(`/api/api/issue/${issueId}/upvote`)
+    console.log(res)
+    // update state
+  }
+
+  async function downvote(issueId) {
+    // hit API with downvote for issueId
+    const res = await userAxios.put(`/api/api/issue/${issueId}/downvote`)
+    // error handling
+    if (res.status !== 200) return alert('Unable to downvote')
+    // UPDATE STATE:
+    // create new issues var
+    let newIssues = userState.issues
+    // grab index of updated issue
+    const index = userState.issues.findIndex((issue) => issue._id === issueId)
+    // update issue
+    newIssues[index] = res.data.issue
+    // set state
+    setUserState((prevUserState) => ({ ...prevUserState, issues: newIssues }))
+  }
+
   async function getUserIssues() {
     try {
       const res = await userAxios.get('/api/api/issue/user')
@@ -140,6 +163,8 @@ export default function UserProvider(props) {
         addComment,
         resetAuthError,
         getUserIssues,
+        upvote,
+        downvote,
       }}
     >
       {props.children}

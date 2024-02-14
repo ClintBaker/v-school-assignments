@@ -29,6 +29,10 @@
   justify-content: space-between;
 }
 
+.blue {
+  color: #007bff;
+}
+
 .issue_btn {
   border: 1px solid #eaeaea;
   margin: 1px;

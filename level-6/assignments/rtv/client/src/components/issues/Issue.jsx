@@ -14,11 +14,20 @@ export default function Issue({
   description,
   _id,
 }) {
+  // toggle state
   const [commentToggle, setCommentToggle] = useState(false)
+  // form data state
   const [commentFormData, setCommentFormData] = useState({ comment: '' })
+  // upvote state
+  const [vote, setVote] = useState('')
+  // grab addComment, user, upvote, downvote from context
+  const { addComment, user, downvote, upvote } = useContext(UserContext)
 
-  const { addComment } = useContext(UserContext)
-
+  // define class of upvote / downvote
+  useEffect(() => {
+    if (upvotes.includes(user._id)) setVote('upvote')
+    if (downvotes.includes(user._id)) setVote('downvote')
+  }, [upvotes, downvotes])
   function handleSubmitComment() {
     const comment = commentFormData.comment
     // async call to axios to post comment
@@ -35,6 +44,20 @@ export default function Issue({
     }))
   }
 
+  function handleUpvote() {
+    // if already upvoted do nothing
+    if (upvotes.includes(user._id)) return alert('already upvoted')
+    // else fire upvote function
+    upvote(_id)
+  }
+
+  function handleDownvote() {
+    // if already downvoted do nothing
+    if (downvotes.includes(user._id)) return alert('already downvoted')
+    // else fire downvote function
+    downvote(_id)
+  }
+
   function toggleComment() {
     setCommentToggle((prevCommentToggle) => !prevCommentToggle)
   }
@@ -45,10 +68,16 @@ export default function Issue({
       <div className="issue_buttons">
         <div className="issue_arrows">
           <span>{totalVotes} </span>
-          <button className="issue_btn">
+          <button
+            onClick={handleUpvote}
+            className={vote === 'upvote' ? `blue issue_btn` : 'issue_btn'}
+          >
             <i className="fa-solid fa-arrow-up"></i>
           </button>
-          <button className="issue_btn">
+          <button
+            onClick={handleDownvote}
+            className={vote === 'downvote' ? `blue issue_btn` : 'issue_btn'}
+          >
             <i className="fa-solid fa-arrow-down"></i>
           </button>
         </div>
