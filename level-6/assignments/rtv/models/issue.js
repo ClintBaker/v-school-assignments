@@ -20,7 +20,7 @@ const issueSchema = new Schema({
 })
 
 issueSchema.pre('save', function (next, options) {
-  this.totalVotes = this.upvotes.length + this.downvotes.length
+  this.totalVotes = this.upvotes.length - this.downvotes.length
   next()
 })
 
