@@ -1,10 +1,11 @@
 NOTES
 - Make sure you use userAxios in order to create new comment (gotta associate it)
 - Make sure you whitelist IPs on MongoDB Atlas
+- Adapt all axios URLs for production
 
 TODO
 3. All issues
-4. Upvote / downvote functionality
+4. downvote functionality (copy upvote)
 5. Sort
 
 INCOMPLETE

@@ -120,8 +120,17 @@ export default function UserProvider(props) {
   async function upvote(issueId) {
     // hit API with upvote for issueId
     const res = await userAxios.put(`/api/api/issue/${issueId}/upvote`)
-    console.log(res)
+    // error handling
+    if (res.status !== 200) return alert('Unable to upvote')
     // update state
+    // create new issues
+    let newIssues = userState.issues
+    // grab index of updated issue
+    const index = userState.issues.findIndex((issue) => issue._id === issueId)
+    // update issue
+    newIssues[index] = res.data.issue
+    // set state
+    setUserState((prevUserState) => ({ ...prevUserState, issues: newIssues }))
   }
 
   async function downvote(issueId) {
