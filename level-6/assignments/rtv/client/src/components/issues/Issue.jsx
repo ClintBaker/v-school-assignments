@@ -27,6 +27,7 @@ export default function Issue({
   useEffect(() => {
     if (upvotes.includes(user._id)) setVote('upvote')
     if (downvotes.includes(user._id)) setVote('downvote')
+    console.log(issue)
   }, [upvotes, downvotes])
 
   function handleSubmitComment() {
@@ -65,6 +66,7 @@ export default function Issue({
   return (
     <div className="issue card">
       <h3 className="issue_title">{title}</h3>
+      <h5 className="blue">User: {issue.user.username}</h5>
       <p className="issue_description">{description}</p>
       <div className="issue_buttons">
         <div className="issue_arrows">

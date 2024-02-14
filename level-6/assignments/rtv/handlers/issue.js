@@ -26,6 +26,7 @@ export const getIssues = async (req, res, next) => {
   try {
     // get all issues
     const issues = await Issue.find()
+      .populate('user', 'username')
       .populate({
         path: 'comments',
         populate: {

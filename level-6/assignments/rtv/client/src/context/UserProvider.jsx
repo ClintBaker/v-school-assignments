@@ -27,7 +27,7 @@ export default function UserProvider(props) {
     console.log('updating userIssues')
     // updated issues
     setUserIssues(
-      userState.issues.filter((issue) => issue.user === userState.user._id)
+      userState.issues.filter((issue) => issue.user._id === userState.user._id)
     )
   }, [userState])
 
