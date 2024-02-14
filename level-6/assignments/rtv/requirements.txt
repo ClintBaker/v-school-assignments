@@ -3,9 +3,6 @@ NOTES
 - Make sure you whitelist IPs on MongoDB Atlas
 - Adapt all axios URLs for production
 
-TODO
-3. All issues
-
 COMPLETE
 1. //DONE User Authentication
     - //DONE Login & signup page.  Authentication must occur to access any part of app.
@@ -32,3 +29,4 @@ COMPLETE
             - //DONE One per User
     - //DONE Sort based on number of upvotes, with the most upvoted issues at the top
     - //DONE Display total number of votes per issues
+3. //DONE All issues
