@@ -16,21 +16,20 @@ export default function UserProvider(props) {
     user: JSON.parse(localStorage.getItem('user')) || {},
     token: localStorage.getItem('token') || '',
     issues: [],
-    userIssues: [],
     err: '',
   }
 
   const [userState, setUserState] = useState(initState)
+  const [userIssues, setUserIssues] = useState([])
 
   // update user issues based on all issues
   useEffect(() => {
-    setUserState((prevUserState) => ({
-      ...prevUserState,
-      userIssues: userState.issues.filter(
-        (issue) => issue.user === userState.user._id
-      ),
-    }))
-  }, [userState.issues])
+    console.log('updating userIssues')
+    // updated issues
+    setUserIssues(
+      userState.issues.filter((issue) => issue.user === userState.user._id)
+    )
+  }, [userState])
 
   async function signup(credentials) {
     try {
@@ -185,6 +184,7 @@ export default function UserProvider(props) {
     <UserContext.Provider
       value={{
         ...userState,
+        userIssues,
         setUserState,
         signup,
         signin,

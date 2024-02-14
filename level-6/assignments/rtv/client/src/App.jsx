@@ -11,7 +11,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   // get token from context
-  const { token, user, logout, addIssue, issues, getUserIssues } =
+  const { token, user, logout, addIssue, issues, userIssues, getUserIssues } =
     useContext(UserContext)
 
   const handleLogout = () => {
@@ -49,7 +49,7 @@ function App() {
               <ProtectedRoute token={token} redirect="/">
                 <Profile
                   getUserIssues={getUserIssues}
-                  issues={issues}
+                  issues={userIssues}
                   addIssue={addIssue}
                   user={user}
                 />
@@ -60,7 +60,11 @@ function App() {
             path="/issues"
             element={
               <ProtectedRoute token={token} redirect="/">
-                <AllIssues />
+                <AllIssues
+                  getUserIssues={getUserIssues}
+                  issues={issues}
+                  user={user}
+                />
               </ProtectedRoute>
             }
           />
