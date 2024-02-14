@@ -5,19 +5,6 @@ NOTES
 
 TODO
 3. All issues
-4. downvote functionality (copy upvote)
-5. Sort
-
-INCOMPLETE
-2. Issue List
-    - List of issues
-        - //DONE Each has a title & description
-        - Upvote or downvote each
-            - One per User
-    - Sort based on number of upvotes, with the most upvoted issues at the top
-    - Display total number of votes per issues
-
-
 
 COMPLETE
 1. //DONE User Authentication
@@ -36,3 +23,12 @@ COMPLETE
     - //DONE Include a page for logged-in users to add new posts
     - //DONE Implement a page where logged-in users can view all the posts theyve created
     - //DONE Allow users to comment on posts with an unlimited number of comments per posts
+4. //DONE downvote functionality (copy upvote)
+5. //DONE Sort
+2. //DONE Issue List
+    - //DONE List of issues
+        - //DONE Each has a title & description
+        - //DONE Upvote or downvote each
+            - //DONE One per User
+    - //DONE Sort based on number of upvotes, with the most upvoted issues at the top
+    - //DONE Display total number of votes per issues

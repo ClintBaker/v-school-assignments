@@ -157,8 +157,6 @@ export default function UserProvider(props) {
       const sortedIssues = res.data.issues.sort(
         (a, b) => b.totalVotes - a.totalVotes
       )
-
-      console.log(sortedIssues)
       // update state
       setUserState((prevUserState) => ({
         ...prevUserState,

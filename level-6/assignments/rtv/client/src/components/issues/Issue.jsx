@@ -28,6 +28,7 @@ export default function Issue({
     if (upvotes.includes(user._id)) setVote('upvote')
     if (downvotes.includes(user._id)) setVote('downvote')
   }, [upvotes, downvotes])
+
   function handleSubmitComment() {
     const comment = commentFormData.comment
     // async call to axios to post comment

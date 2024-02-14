@@ -1,10 +1,11 @@
 import { useEffect, useState, useContext } from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes, Navigate, Link } from 'react-router-dom'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
 import { UserContext } from './context/UserProvider'
 import './nav.css'
 import ProtectedRoute from './components/ProtectedRoute'
+import AllIssues from './components/AllIssues'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,7 +24,8 @@ function App() {
       <nav className="nav">
         <div className="nav_secondary">
           <h1>RTV</h1>
-          {token && <a>All Issues</a>}
+          {token && <Link to="/profile">Profile</Link>}
+          {token && <Link to="/issues">All Issues</Link>}
         </div>
         <div>
           {token && (
@@ -51,6 +53,14 @@ function App() {
                   addIssue={addIssue}
                   user={user}
                 />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/issues"
+            element={
+              <ProtectedRoute token={token} redirect="/">
+                <AllIssues />
               </ProtectedRoute>
             }
           />
