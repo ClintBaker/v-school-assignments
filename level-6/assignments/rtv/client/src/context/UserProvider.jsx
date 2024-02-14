@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export const UserContext = React.createContext()
@@ -16,10 +16,21 @@ export default function UserProvider(props) {
     user: JSON.parse(localStorage.getItem('user')) || {},
     token: localStorage.getItem('token') || '',
     issues: [],
+    userIssues: [],
     err: '',
   }
 
   const [userState, setUserState] = useState(initState)
+
+  // update user issues based on all issues
+  useEffect(() => {
+    setUserState((prevUserState) => ({
+      ...prevUserState,
+      userIssues: userState.issues.filter(
+        (issue) => issue.user === userState.user._id
+      ),
+    }))
+  }, [userState.issues])
 
   async function signup(credentials) {
     try {
@@ -149,10 +160,10 @@ export default function UserProvider(props) {
     setUserState((prevUserState) => ({ ...prevUserState, issues: newIssues }))
   }
 
-  async function getUserIssues() {
+  async function getAllIssues() {
     try {
       // get user issues
-      const res = await userAxios.get('/api/api/issue/user')
+      const res = await userAxios.get('/api/api/issue')
       // sort issues based on upvotes
       const sortedIssues = res.data.issues.sort(
         (a, b) => b.totalVotes - a.totalVotes
@@ -166,6 +177,10 @@ export default function UserProvider(props) {
       console.log(e.response.data.error)
     }
   }
+
+  async function getUserIssues() {
+    getAllIssues()
+  }
   return (
     <UserContext.Provider
       value={{
@@ -178,6 +193,7 @@ export default function UserProvider(props) {
         addComment,
         resetAuthError,
         getUserIssues,
+        getAllIssues,
         upvote,
         downvote,
       }}
