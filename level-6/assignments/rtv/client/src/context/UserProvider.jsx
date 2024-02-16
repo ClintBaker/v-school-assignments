@@ -101,11 +101,10 @@ export default function UserProvider(props) {
   async function addIssue(newIssue) {
     try {
       const res = await userAxios.post('/api/api/issue', newIssue)
+      console.log('USER ISSUES')
+      console.log(res.data.issue)
       // add issue to state
-      setUserState((prevUserState) => ({
-        ...prevUserState,
-        issues: [...prevUserState.issues, res.data.issue],
-      }))
+      setUserIssues((prevUserIssues) => [...prevUserIssues, res.data.issue])
     } catch (e) {
       console.log(e.response.data.error)
     }
@@ -162,7 +161,8 @@ export default function UserProvider(props) {
   async function getAllIssues() {
     try {
       // get user issues
-      const res = await userAxios.get('/api/api/issue')
+      const res = await userAxios.get('/api/api/issue/user')
+      console.log(res.data.issues)
       // sort issues based on upvotes
       const sortedIssues = res.data.issues.sort(
         (a, b) => b.totalVotes - a.totalVotes
@@ -174,11 +174,13 @@ export default function UserProvider(props) {
       }))
     } catch (e) {
       console.log(e.response.data.error)
+      alert('error getting issues')
     }
   }
 
   async function getUserIssues() {
-    getAllIssues()
+    const res = await userAxios.get('/api/api/issue/user')
+    setUserIssues(res.data.issues)
   }
   return (
     <UserContext.Provider

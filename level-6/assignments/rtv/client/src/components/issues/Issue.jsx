@@ -48,7 +48,7 @@ export default function Issue({
 
   function handleUpvote() {
     // if already upvoted do nothing
-    if (upvotes.includes(user._id)) return alert('already upvoted')
+    // if (upvotes.includes(user._id)) return alert('already upvoted')
     // else fire upvote function
     upvote(_id)
   }

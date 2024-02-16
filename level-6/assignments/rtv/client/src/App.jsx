@@ -11,8 +11,16 @@ function App() {
   const [count, setCount] = useState(0)
 
   // get token from context
-  const { token, user, logout, addIssue, issues, userIssues, getUserIssues } =
-    useContext(UserContext)
+  const {
+    token,
+    user,
+    logout,
+    addIssue,
+    issues,
+    userIssues,
+    getUserIssues,
+    getAllIssues,
+  } = useContext(UserContext)
 
   const handleLogout = () => {
     // logout function to clear localStorage and state
@@ -61,7 +69,7 @@ function App() {
             element={
               <ProtectedRoute token={token} redirect="/">
                 <AllIssues
-                  getUserIssues={getUserIssues}
+                  getUserIssues={getAllIssues}
                   issues={issues}
                   user={user}
                 />
